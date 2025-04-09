@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Portfólio</title>
+
+  <style>
+    @font-face {
+        font-family: 'Coolvetica';
+        src: url('fonts/Coolvetica Rg.otf') format('opentype'); 
+    }
+    @font-face {
+        font-family: 'Gitaluevo';
+        src: url('fonts/Gitaluevo.ttf') format('truetype'); 
+    }
+
+    body {
+      margin: 0;
+      background-image: url("img/backgroundpattern.png");
+      background-size: 2%;
+      background-repeat: repeat;
+    }
+
+    @media screen and (max-width: 968px) {
+      body {
+        background-size: 10%;
+      }
+      .header-wave{
+        margin-top: 100px;
+      }
+    }
+
+    .cabecalho {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #131313;
+      color: rgb(224, 230, 218);
+      padding: 10px 30px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+
+    .cabecalho h1 {
+      font-family: 'Coolvetica', sans-serif;
+      margin: 0;
+      letter-spacing: 1px;
+      font-size: 32px;
+      margin-right: 20px;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+      flex-wrap:wrap;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: rgb(224, 230, 218);
+      font-size: 18px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Container para a onda com padrão repetido */
+    .header-wave {
+      /* Se a imagem for um padrão de onda tileable, repetimos ela no eixo X */
+      background: url("img/headerunderpattern.png") repeat-x;
+      background-size: auto 100%;
+      width: 100%;
+      height: 60px; /* ajuste conforme a altura do seu padrão */
+      margin-top: 50px; 
+      filter:drop-shadow(0px 0px 5px #000);
+      z-index: 1; 
+      position: relative; 
+    }
+
+    .conteudo {
+        display: flex; /* Isso alinha os filhos lado a lado */
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        margin-top: 20px;
+        flex-wrap: wrap-reverse; /* Garante que fique responsivo em telas menores */
+    }
+
+    .caixa {
+        background-color: #131313;
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+        width: 40%;
+        min-width: 300px;
+        filter: opacity(0.9);
+        box-shadow: 0px 0px 10px #000;
+        justify-content: center;
+        min-height: 400px;
+    }
+
+
+    .caixa h2 {
+      font-family: 'Gitaluevo', sans-serif;
+      letter-spacing: 0.2rem;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+    .caixa p {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 25px;
+    }
+
+    #foto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        min-width: 280px;
+    }
+
+  #foto img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #000;
+    }
+</style>
+</head>
+
+<body>
+  <!-- Cabeçalho fixo -->
+  <div class="cabecalho">
+    <h1>Meu portfólio</h1>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+      <a href="curriculo.html">Currículo</a>
+    </div>
+  </div>
+
+  <!-- Onda com padrão repetido -->
+  <div class="header-wave"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="conteudo">
+    <div class="caixa">
+      <h2>Sobre mim :</h2>
+      <p>
+        Meu nome é <b>João Maria de Araujo</b> e estou atualmente no 5º período
+        do Bacharelado em Tecnologia da Informação na UFRN.
+      </p>
+
+        <p>
+            Sou um estudante apaixonado por tecnologia e programação, sempre em
+            busca de aprender e me aprimorar. Tenho experiência em desenvolvimento
+            com Java, C++ , C, Python, HTML, CSS e JavaScript.
+        </p>
+    </div>
+    <div id="foto">
+        <img src="img/fotominha.png" alt="João Maria de Araujo" />
+      </div>
+  </div>
+
+  <div style="width: 100%; height:5000px;">
+
+    
+  </div>
+  <!-- Rodapé -->
+    <footer style="text-align: center; padding: 20px; background-color: #131313; color: rgb(224, 230, 218); position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2023 João Maria de Araujo. Todos os direitos reservados.</p>
+</body>
+</html>
