@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-    
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Portfólio</title>
-
   <style>
     @font-face {
         font-family: 'Coolvetica';
@@ -17,7 +15,12 @@
         src: url('fonts/Gitaluevo.ttf') format('truetype'); 
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      overflow-x: hidden;
       margin: 0;
       background-image: url("img/backgroundpattern.png");
       background-size: 2%;
@@ -26,6 +29,7 @@
 
     @media screen and (max-width: 968px) {
       body {
+        zoom: 90%;
         background-size: 10%;
       }
       .header-wave {
@@ -37,6 +41,9 @@
       }
       .caixa, #foto {
         width: 90% !important;
+      }
+      .imagedisplay {
+        flex-wrap: wrap !important;  
       }
     }
 
@@ -166,48 +173,104 @@
         box-shadow: 0px 0px 10px #000;
     }
 
-    .rodape {
-      text-align: center;
-      padding: 20px;
-      background-color: #131313;
-      color: rgb(224, 230, 218);
-      position: fixed;
-      bottom: 0;
+    .spikebox {
       width: 100%;
-
+      z-index: 0;
+      filter: drop-shadow(0px 5px 5px #000);
+      position: relative;
     }
-      .spikebox{
-        width: 100%;
-      }
-      .spikes{
-        background-image: url("img/fotominha.png");
-        background-repeat: repeat-x;
-        background-size: 4%;
-        width: 100%;
-        height: 60px;
-      }
-    
+
+    .spikes {
+      background-repeat: repeat-x;
+      background-size: 50px;
+      width: 100%;
+      height: 50px;
+      z-index: 1;
+    }
+
+    .over {
+      background-image: url("img/spikeoverpattern.png");
+    }
+
+    .under {
+      background-image: url("img/spikeunderpattern.png");
+    }
+
+    .imagedisplay {
+      display: flex; 
+      justify-content: center;
+      width: 100%; 
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .imagedisplay img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 30px;
+      box-shadow: 0px 0px 10px #000;
+    }
+
+    .fa {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #131313;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      transition: transform 0.2s;
+    }
+    .fa img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #131313;
+      padding: 5px;
+    }
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-twitter {
+      background: #131313;
+    }
+
+    .fa-google {
+      background: #131313;
+    }
+
+    .fa-github {
+      background: #131313;
+    }
+
+    .fa-linkedin {
+      background: #131313;
+    }
+
+    .fa-instagram {
+      background: #131313;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Cabeçalho fixo -->
   <div class="cabecalho">
     <h1>Meu portfólio</h1>
     <div class="links">
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="contato.html">Contato</a>
-      <a href="curriculo.html">Currículo</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
     </div>
   </div>
 
-  <!-- Onda com padrão repetido -->
   <div class="header-wave"></div>
 
-  <!-- Conteúdo principal -->
-  <div class="conteudo">
+  <div class="conteudo" id="sobre">
     <div class="caixa half">
       <h2>Sobre mim :</h2>
       <p>
@@ -225,8 +288,7 @@
     </div>
   </div>
   
-  <!-- Segunda seção -->
-  <div class="conteudo">
+  <div id="habilidades" class="conteudo">
     <div class="caixa" style="width: 100%; margin-bottom: 40px;">
       <h2 style="text-align: center; font-size: 50px;">Habilidades :</h2>
       <p style="font-size: 30px;">
@@ -238,15 +300,63 @@
     </div>
   </div>
 
-  <div class="spikebox" style="margin-top: 40px;">
-    <row>
-      <div id="spikes">
-      </div>
-      <div style="background-color: #131313;width: 100%;height: 200px;"></div>
-    </row>
-    
+  <div id="projetos" class="spikebox" style="margin-top: 40px;"></div>
+  <div class="spikes over"></div>
+  <div style="background-color: #131313; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 40px 0;">
+    <div style="color: white; border-radius: 10px; padding: 20px; width: 90%; max-width: 1200px;">
+      <h2 style="font-size: 59px; font-family: 'Gitaluevo', sans-serif;">Projetos :</h2>
+      <p style="font-size: 37px; font-family: 'Courier New', Courier, monospace;">Aqui estão alguns dos meus projetos mais recentes:</p>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="font-size: 30px;">1. Jogo 3D em Godot</li>
+        <div class="imagedisplay"><img src="https://placehold.co/600x400" alt="Projeto 1"></div>
+
+        <li style="font-size: 30px;">2. Site pessoal em HTML, CSS e JavaScript</li>
+        <div class="imagedisplay"><img src="https://placehold.co/600x400" alt="Projeto 2"></div>
+
+        <li style="font-size: 30px;">3. Game Engine 2D em java</li>
+        <div class="imagedisplay"><img src="https://placehold.co/600x400" alt="Projeto 3"></div>
+
+        <li style="font-size: 30px;">4. Artes Digitais 2024</li>
+        <div class="imagedisplay">
+          <img src="https://placehold.co/600x400" alt="Arte 1">
+          <img src="https://placehold.co/600x400" alt="Arte 2">
+          <img src="https://placehold.co/600x400" alt="Arte 3">
+          <img src="https://placehold.co/600x400" alt="Arte 4">
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="spikes under"></div>
+
+  <div id="contato" style="height: 800px; text-align: center; align-content: center;">
+    <h1 style="font-family: 'Coolvetica'; font-size: 90px; color: transparent;
+        background: linear-gradient(180deg, #131313, #000);
+        background-clip: text; -webkit-background-clip: text;
+        text-shadow: 0 2px 2px rgba(255,255,255,0.2);">
+      Onde estou? <br>
+      <span style="font-size: 60px;">meus contatos:</span><br>
+    </h1>
+
+    <div style="display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://x.com/LostyKuro" class="fa fa-twitter" target="_blank">
+        <img src="img/social/twitter.png" alt="Twitter Icon" />
+      </a>
+      <a href="mailto:juniormedeirosales@gmail.com" class="fa fa-google" target="_blank">
+        <img src="img/social/email.png" alt="Email Icon" />
+      </a>
+      <a href="https://github.com/Lostykuro" class="fa fa-github" target="_blank">
+        <img src="img/social/github.png" alt="GitHub Icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/jo%C3%A3omariaaraujo/" class="fa fa-linkedin" target="_blank">
+        <img src="img/social/linkdin.png" alt="LinkedIn Icon" />
+      </a>
+    </div>
   </div>
 
-  <div style="height: 1000px;"></div>
+  <div class="spikebox"></div>
+  <div class="spikes over" style="background-image: url(img/headeroverpattern.png);"></div>
+  <div style="background-color: #131313; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 40px 0;">
+    <p style="font-family: Coolvetica; color: white;">Desenvolvido por João Maria de Araujo - 2025</p>
+  </div>
 </body>
 </html>
