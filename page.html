@@ -28,8 +28,30 @@
       body {
         background-size: 10%;
       }
-      .header-wave{
+      .header-wave {
         margin-top: 100px;
+      }
+      .conteudo {
+        flex-direction: column;
+        align-items: center;
+      }
+      .caixa, #foto {
+        width: 90% !important;
+      }
+    }
+
+    @media screen and (max-width: 1366px) {
+      body {
+        background-size: 10%;
+      }
+      .header-wave {
+        margin-top: 100px;
+      }
+      .caixa {
+        width: 45%;
+      }
+      #foto {
+        width: 45%;
       }
     }
 
@@ -58,7 +80,7 @@
     .links {
       display: flex;
       gap: 20px;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
     }
 
     .links a {
@@ -68,41 +90,44 @@
       font-family: 'Courier New', Courier, monospace;
     }
 
-    /* Container para a onda com padrão repetido */
     .header-wave {
-      /* Se a imagem for um padrão de onda tileable, repetimos ela no eixo X */
       background: url("img/headerunderpattern.png") repeat-x;
       background-size: auto 100%;
       width: 100%;
-      height: 60px; /* ajuste conforme a altura do seu padrão */
-      margin-top: 50px; 
-      filter:drop-shadow(0px 0px 5px #000);
-      z-index: 1; 
-      position: relative; 
+      height: 60px;
+      margin-top: 50px;
+      filter: drop-shadow(0px 0px 5px #000);
+      z-index: 1;
+      position: relative;
     }
 
     .conteudo {
-        display: flex; /* Isso alinha os filhos lado a lado */
+        display: flex;
+        flex-direction: row;
         gap: 40px;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
         padding: 40px;
         margin-top: 20px;
-        flex-wrap: wrap-reverse; /* Garante que fique responsivo em telas menores */
+        flex-wrap: wrap;
     }
 
     .caixa {
         background-color: #131313;
         color: white;
         border-radius: 10px;
-        padding: 20px;;
-        min-width: 300px;
+        padding: 20px;
+        min-width: 280px;
+        min-height: 400px;
         filter: opacity(0.9);
         box-shadow: 0px 0px 10px #000;
-        justify-content: center;
-        min-height: 400px;
+        box-sizing: border-box;
+        height: fit-content;
     }
 
+    .half{
+      width: 45%;
+    }
 
     .caixa h2 {
       font-family: 'Gitaluevo', sans-serif;
@@ -110,12 +135,13 @@
       font-size: 34px;
       margin-bottom: 10px;
     }
+
     .caixa p {
       font-family: 'Courier New', Courier, monospace;
       font-size: 25px;
     }
 
-    .rainbow{
+    .rainbow {
         background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
         background-size: 100%;
         background-clip: text;
@@ -128,17 +154,40 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 45%;
         min-width: 280px;
+        box-sizing: border-box;
     }
 
-  #foto img {
+    #foto img {
         width: 100%;
         max-width: 500px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px #000;
     }
-</style>
+
+    .rodape {
+      text-align: center;
+      padding: 20px;
+      background-color: #131313;
+      color: rgb(224, 230, 218);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+
+    }
+      .spikebox{
+        width: 100%;
+      }
+      .spikes{
+        background-image: url("img/fotominha.png");
+        background-repeat: repeat-x;
+        background-size: 4%;
+        width: 100%;
+        height: 60px;
+      }
+    
+  </style>
 </head>
 
 <body>
@@ -159,60 +208,45 @@
 
   <!-- Conteúdo principal -->
   <div class="conteudo">
-    <div class="caixa" style="width: 45%;">
+    <div class="caixa half">
       <h2>Sobre mim :</h2>
       <p>
         Meu nome é <b>João Maria de Araujo</b> e estou atualmente no 5º período
         do Bacharelado em Tecnologia da Informação na UFRN.
       </p>
-
-        <p>
-            Sou um estudante apaixonado por tecnologia e programação, sempre em
-            busca de aprender e me aprimorar. Tenho experiência em desenvolvimento
-            com <scan class="rainbow">Java</scan>, C++ , C, Python, HTML, CSS e JavaScript.
-        </p>
+      <p>
+        Sou um estudante apaixonado por tecnologia e programação, sempre em
+        busca de aprender e me aprimorar. Tenho experiência em desenvolvimento
+        com <span class="rainbow">Java</span>, C++, C, Python, HTML, CSS e JavaScript.
+      </p>
     </div>
     <div id="foto">
         <img src="img/fotominha.png" alt="João Maria de Araujo" />
+    </div>
+  </div>
+  
+  <!-- Segunda seção -->
+  <div class="conteudo">
+    <div class="caixa" style="width: 100%; margin-bottom: 40px;">
+      <h2 style="text-align: center; font-size: 50px;">Habilidades :</h2>
+      <p style="font-size: 30px;">
+        Tenho experiência em desenvolvimento de software, com foco em
+        programação orientada a objetos e desenvolvimento web. Também possuo experiência na área 
+        de design, com foco em design gráfico e edição de vídeos e arte digital. Além disso, possuo interesse na 
+        área de desenvolvimento de jogos, com foco em desenvolvimento de jogos 2D e 3D em Godot, Unity e Game Maker.
+      </p>
+    </div>
+  </div>
+
+  <div class="spikebox" style="margin-top: 40px;">
+    <row>
+      <div id="spikes">
       </div>
-  </div>
-<div class =conteudo>
-  <div class="caixa" style="width: 100%; margin: 40px; max-height: 400px;">
-    <h2 style="text-align: center; font-size: 50px;">Habilidades :</h2>
-    <p style="font-size: 30px;">
-      Tenho experiência em desenvolvimento de software, com foco em
-      programação orientada a objetos e desenvolvimento web. Tambem possuo experiência na area 
-      de design, com foco em design gráfico e edição de vídeos e arte digital. Alem disso, possuo interesse na 
-      area de desenvolvimento de jogos, com foco em desenvolvimento de jogos 2D e 3D em Godot, Unity e Game maker.
-    </p>
-  </div>
-</div>
-  <!-- Exemplo de uso do flex com alinhamento e distribuição -->
-  <div style="display: flex; justify-content: space-around; align-items: center; height: 200px; background-color: #f0f0f0; margin: 20px 0;">
-    <div style="flex: 1; background-color: #ff0000; height: 100px; margin: 0 10px;"></div>
-    <div style="flex: 2; background-color: #00ff00; height: 100px; margin: 0 10px;"></div>
-    <div style="flex: 1; background-color: #0000ff; height: 100px; margin: 0 10px;"></div>
+      <div style="background-color: #131313;width: 100%;height: 200px;"></div>
+    </row>
+    
   </div>
 
-  <!-- Exemplo de flex com flex-wrap -->
-  <div style="display: flex; flex-wrap: wrap; gap: 10px; background-color: #e0e0e0; padding: 20px;">
-    <div style="flex: 1 1 150px; background-color: #0f0d05; height: 100px;"></div>
-    <div style="flex: 1 1 150px; background-color: #cc00ff; height: 100px;"></div>
-    <div style="flex: 1 1 150px; background-color: #00ccff; height: 100px;"></div>
-    <div style="flex: 1 1 150px; background-color: #00ffcc; height: 100px;"></div>
-  </div>
-
-  <!-- Exemplo de flex com alinhamento vertical -->
-  <div style="display: flex; flex-direction: column; align-items: center; height: 300px; background-color: #d0d0d0; margin: 20px 0;">
-    <div style="background-color: #ff6666; width: 100px; height: 50px; margin: 10px;"></div>
-    <div style="background-color: #66ff66; width: 100px; height: 50px; margin: 10px;"></div>
-    <div style="background-color: #6666ff; width: 100px; height: 50px; margin: 10px;"></div>
-  </div>
-
-
-  <!-- Rodapé -->
-    <footer style="text-align: center; padding: 20px; background-color: #131313; color: rgb(224, 230, 218); position: fixed; bottom: 0; width: 100%;">
-        <p>&copy; 2023 João Maria de Araujo. Todos os direitos reservados.</p>
-    </footer>
+  <div style="height: 1000px;"></div>
 </body>
 </html>
